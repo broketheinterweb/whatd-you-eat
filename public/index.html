@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Tracker - What'd You Eat?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🥗 What'd You Eat?</h1>
+            <p class="subtitle">Track your daily nutrition with AI-powered analysis</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Tell me what you ate today</h2>
+                <p class="helper-text">Type in plain language, like "2 eggs, toast with butter, and orange juice"</p>
+                <textarea
+                    id="foodInput"
+                    placeholder="Example: For breakfast I had scrambled eggs, whole wheat toast, and a banana. For lunch I ate a chicken Caesar salad..."
+                    rows="6"
+                ></textarea>
+                <button id="analyzeBtn" class="primary-btn">
+                    <span class="btn-text">Analyze My Nutrition</span>
+                    <span class="loader" style="display: none;"></span>
+                </button>
+                <button id="clearBtn" class="secondary-btn">Clear All Data</button>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Your Nutritional Analysis</h2>
+
+                <div class="summary-card">
+                    <h3>Summary</h3>
+                    <p id="analysisSummary"></p>
+                </div>
+
+                <div class="nutrients-grid">
+                    <div class="nutrient-card">
+                        <h3>Nutrients Consumed Today</h3>
+                        <div id="consumedNutrients" class="nutrient-list"></div>
+                    </div>
+
+                    <div class="nutrient-card">
+                        <h3>Still Needed</h3>
+                        <div id="remainingNutrients" class="nutrient-list"></div>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <h3>Daily Goal Progress</h3>
+                    <div id="progressBars"></div>
+                </div>
+
+                <div class="recommendations-card">
+                    <h3>Recommended Foods</h3>
+                    <ul id="recommendationsList"></ul>
+                </div>
+
+                <div class="history-section">
+                    <h3>Food History (Today)</h3>
+                    <ul id="foodHistory"></ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by Claude AI | Nutritional estimates are approximate</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

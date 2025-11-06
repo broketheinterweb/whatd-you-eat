@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #10a37f;
+    --secondary-color: #1a7f64;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --success-color: #22c55e;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --border-color: #e5e7eb;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.input-section {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 2rem;
+}
+
+.input-section h2 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.helper-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s;
+    margin-bottom: 1rem;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.primary-btn, .secondary-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+}
+
+.primary-btn:hover:not(:disabled) {
+    background-color: var(--secondary-color);
+}
+
+.primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.secondary-btn {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--border-color);
+}
+
+.loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.results-section {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.summary-card, .nutrient-card, .recommendations-card, .history-section {
+    background: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.summary-card h3, .nutrient-card h3, .recommendations-card h3, .history-section h3, .progress-section h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.nutrients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.nutrient-list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.nutrient-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: var(--bg-light);
+    border-radius: 6px;
+}
+
+.nutrient-name {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.nutrient-value {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.progress-section {
+    background: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.progress-item {
+    margin-bottom: 1rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.progress-label {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.progress-percentage {
+    color: var(--text-secondary);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--bg-light);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.progress-fill.low {
+    background-color: var(--danger-color);
+}
+
+.progress-fill.medium {
+    background-color: var(--warning-color);
+}
+
+.progress-fill.high {
+    background-color: var(--success-color);
+}
+
+.progress-fill.complete {
+    background-color: var(--primary-color);
+}
+
+#recommendationsList, #foodHistory {
+    list-style: none;
+}
+
+#recommendationsList li, #foodHistory li {
+    padding: 0.75rem;
+    background: var(--bg-light);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+#foodHistory li {
+    border-left-color: var(--text-secondary);
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .nutrients-grid {
+        grid-template-columns: 1fr;
+    }
+}
